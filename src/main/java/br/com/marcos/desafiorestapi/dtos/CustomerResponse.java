@@ -21,7 +21,7 @@ public record CustomerResponse(
                 entity.getBirthDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
                 entity.getAge(),
                 entity.getCity().getName(),
-                entity.getCity().getState().getName()
+                entity.getCity().getState().getId()
         );
     }
 

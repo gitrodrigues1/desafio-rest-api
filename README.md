@@ -55,3 +55,8 @@ classDiagram
 - Postgresql
 - Lombok
 - Docker
+
+### Próximas atividades: 
+
+- Criar testes de unidade
+- Criar aplicação frontend

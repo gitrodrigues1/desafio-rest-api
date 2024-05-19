@@ -60,3 +60,4 @@ classDiagram
 
 - Criar testes de unidade
 - Criar aplicação frontend
+- Conteinerizar a aplicação

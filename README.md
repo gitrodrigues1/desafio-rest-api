@@ -25,18 +25,15 @@ A partir dos dados básicos, foi criado o seguinte diagrama de classes:
 ```mermaid
 classDiagram
     class State {
-        -String id
         -String name
     }
     
     class City {
-        -Long id
         -String name
         -State state
     }
     
     class Customer {
-        -Long id
         -String name
         -String gender 
         -String birthDate

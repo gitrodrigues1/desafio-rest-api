@@ -15,7 +15,9 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String gender;
+
+    @Enumerated(EnumType.STRING)
+    private GenderEnum gender;
     private LocalDate birthDate;
     private int age;
     @ManyToOne(cascade = CascadeType.ALL)
@@ -25,7 +27,7 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Long id, String name, String gender, LocalDate birthDate, int age, City city) {
+    public Customer(Long id, String name, GenderEnum gender, LocalDate birthDate, int age, City city) {
         this.id = id;
         this.name = name;
         this.gender = gender;
@@ -34,7 +36,7 @@ public class Customer {
         this.city = city;
     }
 
-    public Customer(String name, String gender, LocalDate birthDate, int age, City city) {
+    public Customer(String name, GenderEnum gender, LocalDate birthDate, int age, City city) {
         this.name = name;
         this.gender = gender;
         this.birthDate = birthDate;

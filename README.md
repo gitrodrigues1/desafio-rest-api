@@ -1,5 +1,13 @@
 ## Desafio API REST
 
+### Tecnologias utilizadas:
+
+[![Java-Version][java-image]][java-url]
+[![Spring Version][spring-image]][spring-url]
+[![Spring Data][spring-data-image]][spring-data-url]
+[![Spring Web][spring-web-image]][spring-web-url]
+[![Postgres-Version][postgres-image]][postgres-url]
+
 ### Requisitos do projeto:
 
 Criar uma API REST com as seguintes funcionalidades:
@@ -46,18 +54,20 @@ classDiagram
     
 ```
 
-
-### Tecnologias utilizadas:
-
-- Spring Boot
-- Spring Web
-- Spring Data Jpa
-- Postgresql
-- Lombok
-- Docker
-
 ### Próximas atividades: 
 
 - Criar testes de unidade
 - Criar aplicação frontend
+- Evoluir Arquitetura
 - Conteinerizar a aplicação
+
+[java-image]: https://img.shields.io/badge/microsoft_jdk-17.0.11-red
+[java-url]: https://learn.microsoft.com/pt-br/java/openjdk/download
+[spring-image]: https://img.shields.io/badge/spring_boot-3.2.5-green
+[spring-url]: https://github.com/spring-projects/spring-boot/releases/tag/v3.2.5
+[spring-data-image]: https://img.shields.io/badge/spring_data_jpa-3.2.5-green
+[spring-data-url]: https://spring.io/projects/spring-data-jpa
+[spring-web-image]: https://img.shields.io/badge/spring_web-3.2.5-green
+[spring-web-url]: https://docs.spring.io/spring-boot/docs/current/reference/html/web.html
+[postgres-image]: https://img.shields.io/badge/postgres-16.1-blue
+[postgres-url]: https://www.postgresql.org/about/news/postgresql-161-155-1410-1313-1217-and-1122-released-2749/

@@ -2,6 +2,7 @@ package br.com.marcos.desafiorestapi.services.impl;
 
 import br.com.marcos.desafiorestapi.domain.City;
 import br.com.marcos.desafiorestapi.domain.Customer;
+import br.com.marcos.desafiorestapi.domain.GenderEnum;
 import br.com.marcos.desafiorestapi.dtos.CreateCustomerRequest;
 import br.com.marcos.desafiorestapi.dtos.CustomerResponse;
 import br.com.marcos.desafiorestapi.dtos.UpdateCustomerRequest;
@@ -40,7 +41,7 @@ public class CustomerService implements ICustomerService {
 
         Customer newCustomer = new Customer(
                 request.name(),
-                request.gender(),
+                GenderEnum.valueOf(request.gender()),
                 LocalDate.parse(request.birthDate(), DateTimeFormatter.ofPattern("dd/MM/yyyy")),
                 request.age(),
                 city);

@@ -71,3 +71,4 @@ classDiagram
 [spring-web-url]: https://docs.spring.io/spring-boot/docs/current/reference/html/web.html
 [postgres-image]: https://img.shields.io/badge/postgres-16.1-blue
 [postgres-url]: https://www.postgresql.org/about/news/postgresql-161-155-1410-1313-1217-and-1122-released-2749/
+[swagger-image]: https://img.shields.io/badge/swagger-2.3.0-purple

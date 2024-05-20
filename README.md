@@ -7,7 +7,7 @@
 [![Spring Data][spring-data-image]][spring-data-url]
 [![Spring Web][spring-web-image]][spring-web-url]
 [![Postgres-Version][postgres-image]][postgres-url]
-[swagger-image]
+![Swagger-Version][swagger-image]
 
 ### Requisitos do projeto:
 

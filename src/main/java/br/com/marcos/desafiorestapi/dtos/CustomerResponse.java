@@ -2,13 +2,14 @@ package br.com.marcos.desafiorestapi.dtos;
 
 
 import br.com.marcos.desafiorestapi.domain.Customer;
+import br.com.marcos.desafiorestapi.domain.GenderEnum;
 
 import java.time.format.DateTimeFormatter;
 
 public record CustomerResponse(
         Long id,
         String name,
-        String gender,
+        GenderEnum gender,
         String birthDate,
         int age,
         String city,

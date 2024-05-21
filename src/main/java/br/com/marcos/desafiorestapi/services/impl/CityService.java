@@ -3,7 +3,7 @@ package br.com.marcos.desafiorestapi.services.impl;
 import br.com.marcos.desafiorestapi.domain.City;
 import br.com.marcos.desafiorestapi.domain.State;
 import br.com.marcos.desafiorestapi.dtos.CreateCityRequest;
-import br.com.marcos.desafiorestapi.dtos.CreateCityResponse;
+import br.com.marcos.desafiorestapi.dtos.CityResponse;
 import br.com.marcos.desafiorestapi.exceptions.BusinessException;
 import br.com.marcos.desafiorestapi.repositories.CityRepository;
 import br.com.marcos.desafiorestapi.repositories.StateRepository;
@@ -25,28 +25,30 @@ public class CityService implements ICityService {
     }
 
     @Override
-    public CreateCityResponse createCity(CreateCityRequest city) {
+    public CityResponse createCity(CreateCityRequest city) {
 
-        State state = stateRepository.findById(city.stateId()).orElse(null);
+        State state = stateRepository.findById(city.stateId())
+                .orElseThrow(BusinessException.InvalidStateException::new);
+
         City newCity = new City(city.name(), state);
 
         if (cityRepository.existsByNameAndStateId(city.name(), city.stateId())) {
             throw new BusinessException.CityAlreadyExistsException();
         }
-        return new CreateCityResponse(cityRepository.save(newCity));
+        return new CityResponse(cityRepository.save(newCity));
     }
 
     @Override
-    public List<CreateCityResponse> findCityByName(String name) {
+    public List<CityResponse> findCityByName(String name) {
         return cityRepository.findCityByNameContainsIgnoreCase(name)
                 .orElse(Collections.emptyList())
-                .stream().map(CreateCityResponse::new).toList();
+                .stream().map(CityResponse::new).toList();
     }
 
     @Override
-    public List<CreateCityResponse> findCityByState(String state) {
+    public List<CityResponse> findCityByState(String state) {
         return cityRepository.findCityByState(state)
                 .orElse(Collections.emptyList())
-                .stream().map(CreateCityResponse::new).toList();
+                .stream().map(CityResponse::new).toList();
     }
 }

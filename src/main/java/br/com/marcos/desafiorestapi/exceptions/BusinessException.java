@@ -14,6 +14,12 @@ public class BusinessException {
         }
     }
 
+    public static class CityNotFoundException extends RuntimeException {
+        public CityNotFoundException() {
+            super("City not found.");
+        }
+    }
+
     public static class CityAlreadyExistsException extends RuntimeException {
         public CityAlreadyExistsException() {
             super("City already exists.");

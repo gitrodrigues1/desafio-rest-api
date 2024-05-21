@@ -42,6 +42,14 @@ public class ControllerExceptionHandler {
                 ex.getMessage()));
     }
 
+    @ExceptionHandler(BusinessException.InvalidStateException.class)
+    public ResponseEntity<DefaultMessage> handleInvalidStateException(BusinessException.InvalidStateException ex) {
+        return ResponseEntity.status(404).body(new DefaultMessage(
+                LocalDateTime.now(),
+                404,
+                ex.getMessage()));
+    }
+
     @ExceptionHandler(BusinessException.InvalidYearOrAgeException.class)
     public ResponseEntity<DefaultMessage> handleInvalidYearOrAgeException(BusinessException.InvalidYearOrAgeException ex) {
         return ResponseEntity.status(404).body(new DefaultMessage(

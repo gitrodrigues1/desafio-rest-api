@@ -25,6 +25,11 @@ public class BusinessException {
             super("City id not found.");
         }
     }
+    public static class InvalidStateException extends RuntimeException {
+        public InvalidStateException() {
+            super("State not found.");
+        }
+    }
 
     public static class InvalidYearOrAgeException extends RuntimeException {
         public InvalidYearOrAgeException() {super("The age informed is not corresponding with birth date.");}

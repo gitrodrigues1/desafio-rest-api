@@ -27,7 +27,9 @@ public class CityService implements ICityService {
     @Override
     public CreateCityResponse createCity(CreateCityRequest city) {
 
-        State state = stateRepository.findById(city.stateId()).orElse(null);
+        State state = stateRepository.findById(city.stateId())
+                .orElseThrow(BusinessException.InvalidStateException::new);
+
         City newCity = new City(city.name(), state);
 
         if (cityRepository.existsByNameAndStateId(city.name(), city.stateId())) {

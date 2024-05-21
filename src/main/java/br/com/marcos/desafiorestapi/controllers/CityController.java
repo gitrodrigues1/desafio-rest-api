@@ -1,7 +1,7 @@
 package br.com.marcos.desafiorestapi.controllers;
 
 import br.com.marcos.desafiorestapi.dtos.CreateCityRequest;
-import br.com.marcos.desafiorestapi.dtos.CreateCityResponse;
+import br.com.marcos.desafiorestapi.dtos.CityResponse;
 import br.com.marcos.desafiorestapi.services.ICityService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -31,7 +31,7 @@ public class CityController {
             @ApiResponse(responseCode = "400", description = "Cidade já cadastrada.")
     })
     @PostMapping
-    public ResponseEntity<CreateCityResponse> createCity(
+    public ResponseEntity<CityResponse> createCity(
             @Valid @RequestBody CreateCityRequest request) {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -43,7 +43,7 @@ public class CityController {
             @ApiResponse(responseCode = "200", description = "Cidade encontrada com sucesso."),
     })
     @GetMapping("/name/{name}")
-    public ResponseEntity<List<CreateCityResponse>> findCityByName(@PathVariable String name) {
+    public ResponseEntity<List<CityResponse>> findCityByName(@PathVariable String name) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(cityService.findCityByName(name));
@@ -54,7 +54,7 @@ public class CityController {
             @ApiResponse(responseCode = "200", description = "Cidades encontradas com sucesso."),
     })
     @GetMapping("/state/{state}")
-    public ResponseEntity<List<CreateCityResponse>> findCityByState(@PathVariable String state) {
+    public ResponseEntity<List<CityResponse>> findCityByState(@PathVariable String state) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(cityService.findCityByState(state));

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/customers")
 @Tag(name = "Customer Controller", description = "API para cadastro de consumidores.")
+@CrossOrigin
 public class CustomerController {
 
     private final ICustomerService customerService;

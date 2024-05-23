@@ -1,7 +1,5 @@
-FROM eclipse-temurin:17-jdk-focal
+FROM openjdk:17
+COPY /target/*.jar /app/desafio-rest-api.jar
 WORKDIR /app
-COPY .mvn/ ./mvn
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:go-offline
-COPY src ./src
-CMD ["./mvnw", "spring-boot:run"]
+EXPOSE 8080
+CMD ["java", "-jar", "desafio-rest-api.jar"]

@@ -17,6 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/cities")
 @Tag(name = "City Controller", description = "API para cadastro de cidades.")
+@CrossOrigin()
 public class CityController {
 
     private final ICityService cityService;

@@ -42,10 +42,10 @@ Cliente: nome completo, sexo, data de nascimento, idade e cidade onde
 > 2 - Excutar o comando:
 
 ```
-docker-compose up --build
+docker-compose up -d --build
 ```
 
-O docker irá fazer o build das imagens do banco de dados e do backend java/spring e executá-las em contêineres. Agora você já pode fazer chamadas às APIs e consultar a documentação via swagger. Para isso, acesso no navegador o seguinte endereço:
+O docker irá fazer o build das imagens do banco de dados postgres, do backend java/spring e do frontend vue.js e executá-las em contêineres orquestrados via docker-compose. Agora você já pode fazer chamadas às APIs e consultar a documentação via swagger. Para isso, acesso no navegador o seguinte endereço:
 
 ```
 http://localhost:8080/swagger-ui/index.html

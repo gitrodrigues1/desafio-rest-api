@@ -26,6 +26,15 @@ public class ControllerExceptionHandler {
         ));
     }
 
+    @ExceptionHandler(BusinessException.CityNotFoundException.class)
+    public ResponseEntity<DefaultMessage> handleCityNotFoundException(BusinessException.CityNotFoundException ex) {
+        return ResponseEntity.status(404).body(new DefaultMessage(
+                LocalDateTime.now(),
+                404,
+                ex.getMessage()
+        ));
+    }
+
     @ExceptionHandler(BusinessException.CityAlreadyExistsException.class)
     public ResponseEntity<DefaultMessage> handleCityAlreadyExistsException(BusinessException.CityAlreadyExistsException ex) {
         return ResponseEntity.status(400).body(new DefaultMessage(
@@ -36,6 +45,14 @@ public class ControllerExceptionHandler {
 
     @ExceptionHandler(BusinessException.InvalidCityIdException.class)
     public ResponseEntity<DefaultMessage> handleInvalidCityIdException(BusinessException.InvalidCityIdException ex) {
+        return ResponseEntity.status(404).body(new DefaultMessage(
+                LocalDateTime.now(),
+                404,
+                ex.getMessage()));
+    }
+
+    @ExceptionHandler(BusinessException.InvalidStateException.class)
+    public ResponseEntity<DefaultMessage> handleInvalidStateException(BusinessException.InvalidStateException ex) {
         return ResponseEntity.status(404).body(new DefaultMessage(
                 LocalDateTime.now(),
                 404,

@@ -7,7 +7,6 @@ import br.com.marcos.desafiorestapi.dtos.CityResponse;
 import br.com.marcos.desafiorestapi.exceptions.BusinessException;
 import br.com.marcos.desafiorestapi.repositories.CityRepository;
 import br.com.marcos.desafiorestapi.repositories.StateRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
